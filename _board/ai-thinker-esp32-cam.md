@@ -64,7 +64,7 @@ This allows software which knows this (e.g. Arduino) to automatically perform ha
 Unfortunately, many serial emulators and even some python libraries which communicate via Serial ports will typically set the state of one of both of these hardware flow control lines - this means that your ESP32-CAM might not be able to boot or be used by some software.  Notable examples include Thonny, ampy, pyboard, and Windows version of Python itself\*
 
 \* The work-around for Windows python is to first create the serial port object, without specifying which port to use - this bypasses the Python windows bug which always sets the RTS/DTR pins.  You can then tell the serial object which port, and set the RTS/DTR pins as you like.
-
+\* If your using a utility like tio you will probably have to manually set RTS/DTS pins to high for the board to actually boot. Do so by ctrl-t and then g then select and change both of the RTS/DTS pins to High. You may accidentally put the board into Download mode just finsh the process of setting the pins to High and then just replug the board in   
 
 ## CircuitPython on ESP32
 
